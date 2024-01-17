@@ -44,3 +44,7 @@ url에 파라미터 넣는 법 : th:href="@{/hello(param1=${param1}, param2=${pa
 url에 경로 넣는 법 : th:href="@{/hello/{param1}/{param2}(param1=${param1}, param2=${param2})}"
 url에 경로와 파람 넣는 법 : th:href="@{/hello/{param1}(param1=${param1}, param2=${param2})}"
 (경로 매핑후 남는애들은 파라미터로 들어감)
+
+리터럴
+타임리프에서 문자리터럴은 항상 ' (작은따옴표)로 감싸야한다
+공백없이 쭉이어진다면 생략해도된다
