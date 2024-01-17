@@ -87,3 +87,14 @@ even , odd : 홀수, 짝수 여부( boolean )
 first , last :처음, 마지막 여부( boolean )
 current : 현재 객체
 
+조건식-if문
+th:if나 unless값이 false면 해당 태그 아예 표시 안된다
+if문 : th:if="${user.age lt 20}"
+if문반대(조건불만족시트루) : th:unless="${user.age ge 20}"
+조건식-switch문
+th:switch="${조건식}"후 th:case="값", th:case="*"는 디폴트 실행
+<td th:switch="${user.age}">
+    <span th:case="10">10살</span>
+    <span th:case="20">20살</span>
+    <span th:case="*">기타</span>
+</td>
