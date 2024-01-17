@@ -121,3 +121,8 @@ var username2 = /*[[${user.username}]]*/ "test username";
 인라인 사용 전 var username2 = /*userA*/ "test username";
 인라인 사용 후 var username2 = "userA";
 객체 : 객체는 알아서 객체타입Json으로 넣어줌.
+
+자바스크립트 인라인 each : each기능 js에서 지원됨
+[# th:each="user, stat : ${users}"]
+구문
+[/]
