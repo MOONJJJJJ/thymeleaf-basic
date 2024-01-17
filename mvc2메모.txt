@@ -9,6 +9,8 @@ escape처리를 기본으로 하고, 특수상황에서만 unescape를 쓴다
 
 변수선언 th:with="변수명=${데이터}"
 
+컨텐츠 안에서 직접 출력하기 = [[${data}]]
+
 타임리프가 제공한다 기본객체
 ${#locale}
 
@@ -110,3 +112,12 @@ HTML 파일을 그대로 열어보면 주석처리가 되지만, 타임리프를
 블록 : th는 보통 속성으로 사용되지만, each만으로 안되는 경우 자체 태그 사용해서 해결
 <th:block> 은 HTML 태그가 아닌 타임리프의 유일한 자체 태그다
 예시) for문 돌리면서 두 영역을 나눠 표현하고싶을때
+
+자바스크립트 인라인 : 자바스크립트에서 타임리프 편리하게 사용하게해줌
+<script th:inline="javascript">
+텍스트 렌더링 : 스트링타입에 " 하지않아도 변수에 알아서 스트링으로 삽입해줌
+내추럴 템플릿 :  HTML 파일을 직접 열어도 동작하는 내추럴 템플릿 기능을 제공한다.
+var username2 = /*[[${user.username}]]*/ "test username";
+인라인 사용 전 var username2 = /*userA*/ "test username";
+인라인 사용 후 var username2 = "userA";
+객체 : 객체는 알아서 객체타입Json으로 넣어줌.
