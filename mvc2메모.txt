@@ -37,3 +37,10 @@ HTTP 세션 접근: session
 #arrays : 배열 관련 기능 제공
 #lists , #sets , #maps : 컬렉션 관련 기능 제공
 #ids : 아이디 처리 관련 기능 제공, 뒤에서 설명
+
+URL링크
+url표현 : th:href="@{/hello}"
+url에 파라미터 넣는 법 : th:href="@{/hello(param1=${param1}, param2=${param2})}"
+url에 경로 넣는 법 : th:href="@{/hello/{param1}/{param2}(param1=${param1}, param2=${param2})}"
+url에 경로와 파람 넣는 법 : th:href="@{/hello/{param1}(param1=${param1}, param2=${param2})}"
+(경로 매핑후 남는애들은 파라미터로 들어감)
