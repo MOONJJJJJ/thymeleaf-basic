@@ -48,3 +48,14 @@ url에 경로와 파람 넣는 법 : th:href="@{/hello/{param1}(param1=${param1}
 리터럴
 타임리프에서 문자리터럴은 항상 ' (작은따옴표)로 감싸야한다
 공백없이 쭉이어진다면 생략해도된다
+리터럴 대체문법 :  th:text="|hello ${data}|"
+"'hello ' + ${data}" 대신 대체문법으로 편하게 쓸 수 있따
+
+연산
+비교연산: HTML 엔티티를 사용해야 하는 부분을 주의하자, 
+> (&gt;) (gt), < (&lt;) (lt), >= (ge), <= (le), ! (not), == (eq), != (neq, ne)
+조건식: 자바의 조건식과 유사하다.  th:text="(조건식)? 'true식':'false식'"
+Elvis 연산자: 조건식의 편의 버전. true면 data출력.  th:text="${data}?: 'false식'"
+No-Operation: _ 인 경우 마치 타임리프가 실행되지 않는 것 처럼 동작한다.   
+<span th:text="${data}?: _">데이터가 없습니다.</span> : true면 data 출력, false면 span태그 내부 텍스트 실행됨.
+이것을 잘 사용하면 HTML의 내용 그대로 활용할 수 있다. 마지막 예를 보면 데이터가 없습니다. 부분이 그대로 출력된다
